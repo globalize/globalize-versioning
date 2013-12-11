@@ -1,11 +1,14 @@
+# encoding: utf-8
+require File.expand_path('../lib/globalize/versioning/version.rb', __FILE__)
+
 Gem::Specification.new do |s|
   s.name         = 'globalize-versioning'
-  s.version      = '4.0.0.alpha.1'
-  s.authors      = ['Sven Fuchs', 'Josh Adams', 'Philip Arndt', 'Chris Salzberg']
+  s.version      = Globalize::Versioning::VERSION
+  s.authors      = ['Philip Arndt', 'Chris Salzberg']
   s.email        = 'nobody@globalize-rails.org'
   s.homepage     = 'http://github.com/globalize/globalize-versioning'
-  s.summary      = 'Rails I18n de-facto standard library for ActiveRecord model/data translation'
-  s.description  = "#{s.summary}."
+  s.summary      = 'Adapter for using versioning gems with Globalize'
+  s.description  = "Provides support for using versioning gems such as PaperTrail with Globalize."
   s.license      = "MIT"
 
   s.files        = Dir['{lib/**/*,[A-Z]*}']
@@ -13,7 +16,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.rubyforge_project = '[none]'
 
-  s.add_dependency 'globalize',    '>= 4.0.0.alpha.3'
+  s.add_dependency 'globalize'
 
   s.add_dependency 'paper_trail',  '~> 3.0.0.beta'
 

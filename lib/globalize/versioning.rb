@@ -1,3 +1,5 @@
+require 'globalize'
+
 module Globalize::Versioning
   autoload :PaperTrail, 'globalize/versioning/paper_trail'
 end
@@ -7,7 +9,11 @@ Globalize::ActiveRecord::ActMacro.module_eval do
     setup_translates_without_versioning!(options)
     if options[:versioning]
       ::ActiveRecord::Base.extend(Globalize::Versioning::PaperTrail)
-      translation_class.has_paper_trail(options[:versioning])
+      if options[:versioning].is_a?(Hash)
+        translation_class.has_paper_trail(options[:versioning])
+      else
+        translation_class.has_paper_trail
+      end
       delegate :version, :versions, :to => :translation
     end
   end
