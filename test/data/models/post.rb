@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-  translates :title, :content, :published, :published_at, :versioning => true
+  translates :title, :versioning => :paper_trail
 end
