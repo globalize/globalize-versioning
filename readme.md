@@ -1,4 +1,4 @@
-# Globalize Versioning
+# Globalize Versioning [![Build Status](https://travis-ci.org/globalize/globalize-versioning.png?branch=master)](https://travis-ci.org/globalize/globalize-versioning)
 
 Globalize nicely integrates with
 [paper_trail](https://github.com/airblade/paper_trail). To add versioning

@@ -1,11 +1,12 @@
 language: ruby
 script: "bundle exec rake"
 env:
-  - DB=sqlite3
-  - DB=postgres
-  - DB=mysql
+  - RAILS_3=true DB=sqlite3
+  - RAILS_3=true DB=postgres
+  - RAILS_3=true DB=mysql
+  - RAILS_4=true DB=sqlite3
+  - RAILS_4=true DB=postgres
+  - RAILS_4=true DB=mysql
 rvm:
   - 2.0.0
   - 1.9.3
-  - rbx-19mode
-  # - jruby-19mode
