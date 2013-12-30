@@ -2,7 +2,6 @@ ActiveRecord::Migration.verbose = false
 
 ActiveRecord::Schema.define do
   create_table :posts, :force => true do |t|
-    t.references :blog
     t.boolean    :published
   end
 
@@ -10,9 +9,6 @@ ActiveRecord::Schema.define do
     t.string     :locale
     t.references :post
     t.string     :title
-    t.text       :content
-    t.boolean    :published
-    t.datetime   :published_at
   end
 
   create_table "versions", :force => true do |t|
