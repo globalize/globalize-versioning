@@ -8,8 +8,6 @@ class VersioningTest < MiniTest::Spec
   end
 
   it "versions are scoped to the current Globalize locale" do
-    skip
-
     post = Post.create!(:title => 'title v1')
 
     post.update_attributes!(:title => 'title v2')
@@ -18,7 +16,7 @@ class VersioningTest < MiniTest::Spec
 
     Globalize.with_locale(:de) {
       post.update_attributes!(:title => 'Titel v1')
-      assert_equal %w[de de], post.translation.versions.map(&:locale)
+      assert_equal %w[de], post.translation.versions.map(&:locale)
     }
 
     post.translation.versions.reset # hrmmm.
