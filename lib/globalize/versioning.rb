@@ -20,8 +20,6 @@ Globalize::ActiveRecord::ActMacro.module_eval do
       else
         translation_class.has_paper_trail
       end
-
-      delegate :version, :versions, :to => :translation
     end
   end
 

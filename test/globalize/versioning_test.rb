@@ -4,7 +4,7 @@ class VersioningTest < MiniTest::Spec
 
   it "creates only one version when created" do
     post = Post.create!(:title => 'title v1')
-    assert_equal 1, post.versions.length
+    assert_equal 1, post.translation.versions.length
   end
 
   it "versions are scoped to the current Globalize locale" do
@@ -14,15 +14,15 @@ class VersioningTest < MiniTest::Spec
 
     post.update_attributes!(:title => 'title v2')
     # Creates a 'created' version, and the update
-    assert_equal %w[en en], post.versions.map(&:locale)
+    assert_equal %w[en en], post.translation.versions.map(&:locale)
 
     Globalize.with_locale(:de) {
       post.update_attributes!(:title => 'Titel v1')
-      assert_equal %w[de de], post.versions.map(&:locale)
+      assert_equal %w[de de], post.translation.versions.map(&:locale)
     }
 
-    post.versions.reset # hrmmm.
-    assert_equal %w[en en], post.versions.map(&:locale)
+    post.translation.versions.reset # hrmmm.
+    assert_equal %w[en en], post.translation.versions.map(&:locale)
   end
 
   it "only reverts changes to the current locale when reverting to an earlier version" do
