@@ -2,8 +2,11 @@
 
 ## Introduction
 
-This gem provides an interface between versioning gems such as
+`globalize-versioning` provides an interface between globalize and versioning gems such as
 [PaperTrail](https://github.com/airblade/paper_trail).
+
+At the moment, only `paper_trail` is supported, but support for other versioning gems is
+planned for the future. Pull requests are always welcome.
 
 ## Installation
 
@@ -14,15 +17,23 @@ gem install globalize-versioning
 ## Usage
 
 To add versioning
-support to your model, just add the `:versioning => true` option to your
-call to <code>translates</code>.  An example from our test suite:
+support to your model, just add the `:versioning` option to your
+call to <code>translates</code> with the name of the versioning gem as its value.
+For example:
 
 ```ruby
-translates :title, :content, :published, :published_at, :versioning => true
+translates :title, :content, :published, :published_at, :versioning => :paper_trail
 ```
 
 You will also need to have already generated the versions table that `paper_trail`
 expects.  See the paper_trail README for more details.
+
+To pass options to the versioning gem, replace the gem name with a hash, and include
+the options as the value of the `:options` key:
+
+```ruby
+translates :title, :content, :published, :published_at, :versioning => { :gem => :paper_trail, :options => { :on => [ :update ] } }
+```
 
 If you are adding globalize to any previously versioned models, please note
 that you will need to add a new `locale` column to your versioning table.
