@@ -14,6 +14,12 @@ planned for the future. Pull requests are always welcome.
 gem install globalize-versioning
 ````
 
+When using bundler, add this line to your `Gemfile`:
+
+```ruby
+gem 'globalize-versioning', '~> 0.1.0.alpha.1'
+```
+
 ## Usage
 
 To add versioning
