@@ -35,11 +35,19 @@ the options as the value of the `:options` key:
 translates :title, :content, :published, :published_at, :versioning => { :gem => :paper_trail, :options => { :on => [ :update ] } }
 ```
 
+To access versions of a translated model, use the format: `post.translation.versions`.
+Earlier versions of the globalize versioning support delegated `version` and `versions`
+to the model translation (so you could access them with just `post.versions`), but
+this causes problems if versioning is used on non-translated attributes, and has thus been removed.
+
+## Adding globalize versioning to previously versioned models
+
 If you are adding globalize to any previously versioned models, please note
 that you will need to add a new `locale` column to your versioning table.
 
-Also, please see the tests in `test/globalize/versioning_test.rb` for some
-current gotchas.
+## Other gotchas
+
+Please see the tests in `test/globalize-versioning/` for more details.
 
 ## License
 
