@@ -20,11 +20,11 @@ Gem::Specification.new do |s|
   if ENV['RAILS_3']
     s.add_dependency 'activerecord', '~> 3.2.0'
     s.add_dependency 'activemodel', '~> 3.2.0'
-    s.add_dependency 'globalize', '~> 3.0.0'
+    s.add_dependency 'globalize', '~> 3.0.4'
   elsif ENV['RAILS_4']
     s.add_dependency 'globalize', '~> 4.0.0'
   else
-    s.add_dependency 'globalize', '>= 3', '< 5'
+    s.add_dependency 'globalize', '>= 3.0.4', '< 5'
   end
 
   s.add_dependency 'paper_trail',  '~> 3.0.0'
