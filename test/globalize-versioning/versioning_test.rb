@@ -73,4 +73,12 @@ class VersioningTest < MiniTest::Spec
       assert_equal 'title v1', post.title
     end
   end
+
+  it "works with has_paper_trail on base model" do
+    venue = Venue.create
+    venue.description = 'a description'
+    venue.save
+    assert_equal 'a description', venue.description
+  end
+
 end
