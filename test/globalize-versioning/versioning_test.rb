@@ -79,9 +79,9 @@ class VersioningTest < MiniTest::Spec
     venue.description = 'a description'
     venue.save!
     assert_equal 'a description', venue.description
-    venue.update_attributes! :description => 'another description'
+    venue.description = 'another description'
     venue.save!
-    venue.reload!
+    venue.reload
     assert_equal 'another description', venue.description
   end
 
