@@ -77,8 +77,12 @@ class VersioningTest < MiniTest::Spec
   it "works with has_paper_trail on base model" do
     venue = Venue.create
     venue.description = 'a description'
-    venue.save
+    venue.save!
     assert_equal 'a description', venue.description
+    venue.update_attributes! :description => 'another description'
+    venue.save!
+    venue.reload!
+    assert_equal 'another description', venue.description
   end
 
 end
