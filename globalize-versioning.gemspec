@@ -23,6 +23,7 @@ Gem::Specification.new do |s|
     s.add_dependency 'globalize', '~> 3.0.4'
   elsif ENV['RAILS_4']
     s.add_dependency 'globalize', '~> 4.0.0'
+    s.add_development_dependency 'minitest', '~> 4.2'
   else
     s.add_dependency 'globalize', '>= 3.0.4'
   end
