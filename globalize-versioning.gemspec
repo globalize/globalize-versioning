@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   elsif ENV['RAILS_4']
     s.add_dependency 'globalize', '~> 4.0.0'
   else
-    s.add_dependency 'globalize', '>= 3.0.4', '< 5'
+    s.add_dependency 'globalize', '>= 3.0.4'
   end
 
   s.add_dependency 'paper_trail',  '~> 3.0.0'
