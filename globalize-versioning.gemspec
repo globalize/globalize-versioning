@@ -21,16 +21,18 @@ Gem::Specification.new do |s|
     s.add_dependency 'activerecord', '~> 3.2.0'
     s.add_dependency 'activemodel', '~> 3.2.0'
     s.add_dependency 'globalize', '~> 3.0.4'
+    s.add_development_dependency 'minitest', '~> 4'
   elsif ENV['RAILS_4']
     s.add_dependency 'globalize', '~> 4.0.0'
+    s.add_development_dependency 'minitest', '~> 4.2'
   else
-    s.add_dependency 'globalize', '>= 3.0.4', '< 5'
+    s.add_dependency 'globalize', '>= 3.0.4'
+    s.add_development_dependency 'minitest', '~> 4'
   end
 
   s.add_dependency 'paper_trail',  '~> 3.0.0'
 
   s.add_development_dependency 'database_cleaner', '>= 1.2.0'
-  s.add_development_dependency 'minitest', '~> 4'
   s.add_development_dependency 'minitest-colorize'
 
   s.add_development_dependency 'sqlite3'
