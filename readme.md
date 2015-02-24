@@ -17,7 +17,7 @@ gem install globalize-versioning
 When using bundler, add this line to your `Gemfile`:
 
 ```ruby
-gem 'globalize-versioning', '~> 0.1.0.alpha.1'
+gem 'globalize-versioning', '~> 0.1.0'
 ```
 
 ## Usage
