@@ -1,3 +1,7 @@
+# 0.2.0 (unreleased)
+
+* added support for paper_trail 4
+
 # 0.1.0 (2015-02-24)
 
 * added support for Globalize 5 and Rails 4.2
