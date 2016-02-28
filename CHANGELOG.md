@@ -1,4 +1,4 @@
-# 0.2.0 (unreleased)
+# 0.2.0 (2016-02-28)
 
 * added support for paper_trail 4
 
