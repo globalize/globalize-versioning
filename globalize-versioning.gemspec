@@ -16,8 +16,8 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.rubyforge_project = 'globalize-versioning'
 
-  s.add_dependency 'activerecord', '>= 3.2.0', '< 5'
-  s.add_dependency 'activemodel', '>= 3.2.0', '< 5'
+  s.add_dependency 'activerecord', '>= 3.2.0', '< 6'
+  s.add_dependency 'activemodel', '>= 3.2.0', '< 6'
   s.add_dependency 'globalize', '>= 3.0.4', '< 6'
 
   s.add_dependency 'paper_trail',  '>= 3.0.0', '< 6'
