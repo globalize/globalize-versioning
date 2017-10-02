@@ -22,6 +22,8 @@ Globalize::ActiveRecord::ActMacro.module_eval do
       end
     end
   end
-
-  alias_method_chain :setup_translates!, :versioning
+  
+  alias_method :versioning, :setup_translates!
+  alias_method :setup_translates!, :versioning
+  
 end
