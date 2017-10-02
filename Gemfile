@@ -20,5 +20,5 @@ elsif ENV['RAILS'] == '4.2'
 else # Rails 5.1
   # The master of globalize currently supports rails 5
   gem 'globalize', github: 'globalize/globalize'
-  gem 'paper_trail', '7.1.0'
+  gem 'paper_trail', '~> 7.1.3'
 end
