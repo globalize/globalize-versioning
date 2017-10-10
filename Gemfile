@@ -16,5 +16,5 @@ elsif ENV['RAILS'] == "4.1"
   gem 'globalize', '~> 4.0'
 else # Rails 4.2
   gem 'globalize', '~> 5.0'
-  gem 'paper_trail', '4.0.0.beta2'
+  gem 'paper_trail', '~> 8.0'
 end
