@@ -33,6 +33,12 @@ MiniTest::Spec.class_eval do
     DatabaseCleaner.clean
   end
 
+  def rollback(object, versions = 1)
+    versions.times do
+      object.translation_caches[Globalize.locale] = object.translation.paper_trail.previous_version
+    end
+  end
+
   def with_locale(*args, &block)
     Globalize.with_locale(*args, &block)
   end

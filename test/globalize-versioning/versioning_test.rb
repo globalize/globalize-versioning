@@ -29,12 +29,10 @@ class VersioningTest < MiniTest::Spec
     post.update_attributes!(:title => 'Titel v1', :locale => :de)
     post.update_attributes!(:title => 'title v3')
 
-    # Roll back 2 versions in default locale
-    post.rollback
-    post.rollback
+    rollback post, 2
 
-    assert_equal 'title v1', post.title(:en)
-    assert_equal 'Titel v1', post.title(:de)
+    assert_equal 'title v1', with_locale(:en) { post.title }
+    assert_equal 'Titel v1', with_locale(:de) { post.title }
   end
 
   it "only reverts in the current locale" do
@@ -57,15 +55,15 @@ class VersioningTest < MiniTest::Spec
     end
 
     with_locale(:en) do
-      post.rollback
+      rollback post
       assert_equal 'updated title in English', post.title
 
-      post.rollback
+      rollback post
       assert_equal 'title v1', post.title
     end
 
     with_locale(:de) do
-      post.rollback
+      rollback post
       assert_equal 'updated title in German', post.title
     end
 
