@@ -2,6 +2,7 @@ require 'globalize'
 
 module Globalize::Versioning
   autoload :PaperTrail, 'globalize/versioning/paper_trail'
+  autoload :InstanceMethods, 'globalize/versioning/instance_methods'
 end
 
 Globalize::ActiveRecord::ActMacro.module_eval do
@@ -9,6 +10,7 @@ Globalize::ActiveRecord::ActMacro.module_eval do
     setup_translates_without_versioning!(options)
 
     if options[:versioning]
+      include Globalize::Versioning::InstanceMethods
 
       # hard-coded for now
       class_attribute :versioning_gem, :instance_accessor => false
