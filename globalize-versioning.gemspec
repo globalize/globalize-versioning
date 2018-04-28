@@ -16,11 +16,12 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
   s.rubyforge_project = 'globalize-versioning'
 
-  s.add_dependency 'activerecord', '>= 3.2.0', '< 5'
-  s.add_dependency 'activemodel', '>= 3.2.0', '< 5'
-  s.add_dependency 'globalize', '>= 3.0.4', '< 6'
+  s.required_ruby_version = '>= 2.3.0'
 
-  s.add_dependency 'paper_trail',  '>= 3.0.0', '< 5'
+  s.add_dependency 'activerecord', '~> 4.2'
+  s.add_dependency 'activemodel',  '~> 4.2'
+  s.add_dependency 'globalize',    '~> 5.0'
+  s.add_dependency 'paper_trail',  '~> 9.0'
 
   s.add_development_dependency 'database_cleaner', '>= 1.2.0'
   s.add_development_dependency 'minitest'

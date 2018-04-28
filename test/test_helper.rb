@@ -6,7 +6,7 @@ Bundler.require(:default, :test)
 require 'database_cleaner'
 
 log = '/tmp/globalize3_test.log'
-FileUtils.touch(log) unless File.exists?(log)
+FileUtils.touch(log) unless File.exist?(log)
 ActiveRecord::Base.logger = Logger.new(log)
 ActiveRecord::LogSubscriber.attach_to(:active_record)
 ActiveRecord::Base.establish_connection(:adapter => 'sqlite3', :database => ':memory:')
@@ -31,6 +31,12 @@ MiniTest::Spec.class_eval do
 
   def teardown
     DatabaseCleaner.clean
+  end
+
+  def rollback(object, versions = 1)
+    versions.times do
+      object.translation_caches[Globalize.locale] = object.translation.paper_trail.previous_version
+    end
   end
 
   def with_locale(*args, &block)

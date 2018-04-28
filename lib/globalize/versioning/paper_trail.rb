@@ -22,11 +22,7 @@ ActiveRecord::Base.class_eval do
   end
 end
 
-# to handle different versions of paper_trail
-version_class = PaperTrail::VERSION.is_a?(String) ? Version : PaperTrail::Version
-
-version_class.class_eval do
-
+PaperTrail::Version.class_eval do
   before_save do |version|
     version.locale = Globalize.locale.to_s
   end
