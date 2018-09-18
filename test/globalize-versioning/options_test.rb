@@ -10,6 +10,7 @@ class OptionsTest < MiniTest::Spec
 
     # options passed to paper_trail: :on => :update
     @options_post_class.class_eval do
+      attribute :title
       translates :title, :versioning => { :gem => :paper_trail, :options => { :on => [ :update ] } }
     end
 
