@@ -2,12 +2,18 @@ language: ruby
 sudo: false
 cache: bundler
 env:
-  matrix:
-    - RAILS=4.2
-    - RAILS=5.0
-    - RAILS=5.1
-    - RAILS=5.2
+  - RAILS=4.2
+  - RAILS=5.0
+  - RAILS=5.1
+  - RAILS=5.2
+  - RAILS=6.0
+matrix:
+  exclude:
+    - rvm: 2.3.7
+      env: RAILS=6.0
+    - rvm: 2.4.4
+      env: RAILS=6.0
 rvm:
   - 2.3.7
   - 2.4.4
-  - 2.5.1
+  - 2.5.3
