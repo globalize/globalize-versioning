@@ -16,7 +16,7 @@ class OptionsTest < MiniTest::Spec
 
     post = @options_post_class.create!(:title => 'title v1')
     assert_equal 0, post.translation.versions.length
-    post.update_attributes! :title => 'title v2'
+    post.update! :title => 'title v2'
     assert_equal 1, post.translation.versions.length
   end
 end
