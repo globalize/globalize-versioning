@@ -1,3 +1,8 @@
+# Unreleased
+
+* added support for Rails 8.0 and 8.1 (activerecord/activemodel < 9), globalize 7 and paper_trail 16/17
+* test suite: use `Minitest` and `File.exist?` for modern Ruby
+
 # 0.2.0 (2016-02-28)
 
 * added support for paper_trail 4

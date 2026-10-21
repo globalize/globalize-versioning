@@ -1,6 +1,6 @@
 require File.expand_path('../../test_helper', __FILE__)
 
-class LegacyVersioningTest < MiniTest::Spec
+class LegacyVersioningTest < Minitest::Spec
 
   it 'defaults to paper_trail versioning when passed :versioning => true' do
     post = LegacyPost.create!(:title => 'title v1')

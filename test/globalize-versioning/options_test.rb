@@ -1,6 +1,6 @@
 require File.expand_path('../../test_helper', __FILE__)
 
-class OptionsTest < MiniTest::Spec
+class OptionsTest < Minitest::Spec
   def setup
     @options_post_class = Class.new(OptionsPost)
   end

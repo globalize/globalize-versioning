@@ -26,6 +26,16 @@ jobs:
             gemfile: '4.2.11.3'
           - ruby: '2.7'
             gemfile: '4.2.11.3'
+        include:
+          # Rails 8 requires Ruby >= 3.2
+          - ruby: '3.4'
+            gemfile: '8.1.0'
+          - ruby: '3.4'
+            gemfile: '8.0.0'
+          - ruby: '3.2'
+            gemfile: '8.1.0'
+          - ruby: '3.2'
+            gemfile: '8.0.0'
       fail-fast: false
     runs-on: ubuntu-latest
     name: ${{ matrix.ruby }} rails-${{ matrix.gemfile }}
